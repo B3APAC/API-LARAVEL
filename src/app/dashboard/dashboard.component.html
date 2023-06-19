@@ -1,0 +1,8 @@
+<div class="h-screen w-full flex flex-col bg-blue-300 items-center justify-center">
+  <div class="h-5/6 w-11/12 flex flex-col bg-white rounded-xl">
+    <div *ngFor="let run of myRunData">
+      <app-run [runData]="run"></app-run>
+    </div>
+    
+  </div>
+</div>

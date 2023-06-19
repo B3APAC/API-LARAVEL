@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "runningman-9afac"
+  },
+  "targets": {
+    "runningman-9afac": {
+      "hosting": {
+        "projectUF": [
+          "runningman-9afac"
+        ]
+      }
+    }
+  }
+}
