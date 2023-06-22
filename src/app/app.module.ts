@@ -15,6 +15,9 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RunComponent } from './run/run.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { UserDatasComponent } from './user-datas/user-datas.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { RunComponent } from './run/run.component';
     SignInComponent,
     SignUpComponent,
     DashboardComponent,
-    RunComponent
+    RunComponent,
+    NavbarComponent,
+    UserDatasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,11 @@ import { RunComponent } from './run/run.component';
       {
         path: 'dashboard',
         component: DashboardComponent,
+      }
+      ,
+      {
+        path: 'userDatas',
+        component: UserDatasComponent,
       },
       {
         path: 'signIn',

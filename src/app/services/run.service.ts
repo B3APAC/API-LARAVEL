@@ -17,7 +17,7 @@ export class RunService {
 
   async getProjects(userId: string) {
     try {
-      const projectsCol = collection(this.db, 'run',userId,'id_user');
+      const projectsCol = collection(this.db, 'activities',userId,'id_user');
       const projectSnapshot = await getDocs(projectsCol);
       const projectList = projectSnapshot.docs.map(doc => {
         const data = doc.data();

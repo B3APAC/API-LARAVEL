@@ -29,10 +29,11 @@ export class SignInComponent {
   ngOnInit() {
     this.auth.onAuthStateChanged((user) => {
       if (user) {
+        console.log("L'utilisateur est connecté");
         this.router.navigate(['/dashboard']);
       } else {
         console.log("L'utilisateur n'est pas connecté");
-      }
+      } 
     });
   }
   //user connected if the form is valid
