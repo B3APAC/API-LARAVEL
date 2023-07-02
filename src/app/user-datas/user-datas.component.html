@@ -4,7 +4,7 @@
     <form [formGroup]="formControl" (ngSubmit)="onSubmit()" class="bg-white w-11/12 shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
         <label for="mail" class="block text-gray-700 text-sm font-bold mb-2">
-          mail
+          Mail
         </label>
         <input formControlName="mail" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mail" type="text" placeholder="maboite@mail.com" >
         <div *ngIf="formControl.controls['mail'].invalid && (formControl.controls['mail'].dirty)">
@@ -13,21 +13,21 @@
       </div>
       <div class="mb-6">
         <label for="taille" class="block text-gray-700 text-sm font-bold mb-2">
-          taille
+          Taille
         </label>
-        <input (change)="calculIMC()" formControlName="taille" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="taille" type="number" min="0" step="1" placeholder="{{user.taille}} cm">
+        <input (change)="calculIMC()" formControlName="taille" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="taille" type="number" min="0" step="1" placeholder="{{user.taille}} cm"cm>
       </div>
       <div class="mb-6">
         <label for="poids" class="block text-gray-700 text-sm font-bold mb-2">
-          poids
+          Poids
         </label>
-        <input (change)="calculIMC()" formControlName="poids" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="poids" type="number" min="0" step="1" placeholder="{{user.poids}} kg">
+        <input (change)="calculIMC()" formControlName="poids" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="poids" type="number" min="0" step="1" placeholder="{{user.poids}} kg">kg
       </div>
       <div class="mb-6">
         <label for="age" class="block text-gray-700 text-sm font-bold mb-2" >
-          âge
+          Age
         </label>
-        <input formControlName="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" type="number" min="0" step="1" placeholder="{{user.age}} ans">
+        <input formControlName="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" type="number" min="0" step="1" placeholder="{{user.age}} ">ans
       </div>
       <div class="flex items-center justify-center">
         <button type="submit" class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group">
@@ -42,7 +42,7 @@
     
 
     <div class="text-center bg-white rounded-xl">
-      <p>On vous calcul votre IMC:</p>
+      <p>On vous calcule votre IMC:</p>
       <p>Votre IMC est de {{imc}}</p>
       <p>{{jugementCorporel}}</p>
     </div>

@@ -32,6 +32,7 @@ export class UserDatasComponent {
       }
     });
     this.imc=Number(this.user.poids)/((Number(this.user.taille)/100)*(Number(this.user.taille)/100));
+    this.imc=parseInt(this.imc.toFixed(2));
     console.log(this.user);
     this.formControl.controls['mail'].setValue(this.user.mail);
     this.formControl.controls['taille'].setValue(this.user.taille);
@@ -53,7 +54,7 @@ export class UserDatasComponent {
 
   calculIMC(){
     this.imc = (this.formControl.controls['poids'].value) / (((this.formControl.controls['taille'].value) / 100) * ((this.formControl.controls['taille'].value) / 100));
-
+    this.imc=parseInt(this.imc.toFixed(2));
     if (this.imc < 18.5) {
       this.jugementCorporel = "Vous êtes en insuffisance pondérale";
     } else if (this.imc >= 18.5 && this.imc < 25) {
