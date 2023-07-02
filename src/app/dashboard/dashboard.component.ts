@@ -11,7 +11,10 @@ export class DashboardComponent {
 
   constructor(private runService: RunService,private authService:AuthService) { }
   myRunData: any = [];
+  auth=this.authService.auth.currentUser;
+
   ngOnInit() {
+    console.log(this.auth);
     if(this.authService.auth.currentUser != null){
       this.runService.getProjects(this.authService.auth.currentUser.uid).then((data) => {
         this.myRunData = data;

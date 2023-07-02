@@ -1,9 +1,12 @@
 <app-navbar></app-navbar>
 <div class="h-screen w-full flex flex-col bg-blue-300 items-center justify-center">
-  <div class="h-5/6 w-11/12 flex flex-col bg-white rounded-xl">
+  <div class="h-5/6 w-11/12 flex flex-col bg-white rounded-xl" *ngIf="auth !=null;else elseblock">
     <!-- <div *ngFor="let run of myRunData">
       <app-run [runData]="run"></app-run>
     </div> -->
     <app-fakerun></app-fakerun>
   </div>
+  <ng-template #elseblock>
+    <p class="uppercase text-xl">Vous n'avez pas encore réalisé d'activité</p>
+  </ng-template>
 </div>
