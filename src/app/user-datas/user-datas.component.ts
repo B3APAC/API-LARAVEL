@@ -33,7 +33,8 @@ export class UserDatasComponent {
     });
     this.imc=Number(this.user.poids)/((Number(this.user.taille)/100)*(Number(this.user.taille)/100));
     this.imc=parseInt(this.imc.toFixed(2));
-    console.log(this.user);
+    console.log("coucou");
+    console.log("this.user:"+this.user.mail);
     this.formControl.controls['mail'].setValue(this.user.mail);
     this.formControl.controls['taille'].setValue(this.user.taille);
     this.formControl.controls['poids'].setValue(this.user.poids);
