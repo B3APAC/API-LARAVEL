@@ -1,10 +1,8 @@
 export interface User {
-  uid: string;
-  email: string;
-  password: string;
-  username: string;
-  tel: string; 
-  address: string;
-  codePostal: string;
-  city: string;
+  id: string;
+  mail: string;
+
+  taille: string; 
+  poids: string;
+  age: number;
 }

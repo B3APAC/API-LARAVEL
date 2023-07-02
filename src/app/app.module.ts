@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -17,7 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RunComponent } from './run/run.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserDatasComponent } from './user-datas/user-datas.component';
-import { HomeComponent } from './home/home.component';
+import { FactorielComponent } from './Bonus/factoriel/factoriel.component';
+import { FakerunComponent } from './fakerun/fakerun.component';
+
 
 @NgModule({
   declarations: [
@@ -28,12 +29,14 @@ import { HomeComponent } from './home/home.component';
     RunComponent,
     NavbarComponent,
     UserDatasComponent,
-    HomeComponent
+    FactorielComponent,
+    FakerunComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    // GoogleMapsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -47,8 +50,7 @@ import { HomeComponent } from './home/home.component';
       {
         path: 'dashboard',
         component: DashboardComponent,
-      }
-      ,
+      },
       {
         path: 'userDatas',
         component: UserDatasComponent,
@@ -56,6 +58,10 @@ import { HomeComponent } from './home/home.component';
       {
         path: 'signIn',
         component: SignInComponent,
+      },
+      {
+        path: 'factoriel',
+        component: FactorielComponent,
       }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),

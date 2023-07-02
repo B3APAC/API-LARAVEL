@@ -1,4 +1,5 @@
-
+import { signOut } from 'firebase/auth';
+import { Router } from '@angular/router';
 import { getAuth } from 'firebase/auth';
 import { Component } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
@@ -11,7 +12,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class NavbarComponent {
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService : AuthService, private router:Router) { }
 
   username: string="";
   showMenu : boolean = false;
@@ -25,5 +26,11 @@ export class NavbarComponent {
 
   toggleNavbar(){
     this.showMenu = !this.showMenu;
+  }
+
+  signOut(){
+    this.authService.signOut();
+    console.log("Déconnexion");
+    this.router.navigate(['/signIn']);
   }
 }

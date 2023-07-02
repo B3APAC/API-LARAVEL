@@ -1,1 +1,51 @@
-<p>user-datas works!</p>
+<app-navbar></app-navbar>
+<div class="h-screen w-full flex flex-col bg-blue-300 items-center justify-center">
+  <div class="h-5/6 w-11/12 flex flex-col bg-white rounded-xl items-center">
+    <form [formGroup]="formControl" (ngSubmit)="onSubmit()" class="bg-white w-11/12 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label for="mail" class="block text-gray-700 text-sm font-bold mb-2">
+          mail
+        </label>
+        <input formControlName="mail" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mail" type="text" placeholder="maboite@mail.com" >
+        <div *ngIf="formControl.controls['mail'].invalid && (formControl.controls['mail'].dirty)">
+          <p class="text-red-500 text-xs italic">Mail non inscrit</p>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="taille" class="block text-gray-700 text-sm font-bold mb-2">
+          taille
+        </label>
+        <input (change)="calculIMC()" formControlName="taille" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="taille" type="number" min="0" step="1" placeholder="{{user.taille}} cm">
+      </div>
+      <div class="mb-6">
+        <label for="poids" class="block text-gray-700 text-sm font-bold mb-2">
+          poids
+        </label>
+        <input (change)="calculIMC()" formControlName="poids" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="poids" type="number" min="0" step="1" placeholder="{{user.poids}} kg">
+      </div>
+      <div class="mb-6">
+        <label for="age" class="block text-gray-700 text-sm font-bold mb-2" >
+          âge
+        </label>
+        <input formControlName="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" type="number" min="0" step="1" placeholder="{{user.age}} ans">
+      </div>
+      <div class="flex items-center justify-center">
+        <button type="submit" class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group">
+          <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+          <img class=" h-6" src="assets/run.png" />
+          </span>
+          <span class="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">Sauvegarder mes données</span>
+          <span class="relative invisible">Envoyer pour calculer Votre IMC</span>
+        </button>
+      </div>
+    </form>
+    
+
+    <div class="text-center bg-white rounded-xl">
+      <p>On vous calcul votre IMC:</p>
+      <p>Votre IMC est de {{imc}}</p>
+      <p>{{jugementCorporel}}</p>
+    </div>
+  </div>
+
+</div>
